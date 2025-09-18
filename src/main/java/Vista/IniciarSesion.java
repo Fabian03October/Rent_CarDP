@@ -4,15 +4,16 @@
  */
 package Vista;
 
+import Controlador.UsuarioJpaController;
+import Modelo.Usuario;
+import java.util.List;
+import javax.swing.JOptionPane;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
 import java.net.URL;
-import java.util.ArrayList;
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 
 
 /**
@@ -124,6 +125,7 @@ public class IniciarSesion extends javax.swing.JFrame {
         btnIniciar.setBorder(null);
         btnIniciar.setOpaque(true);
         btnIniciar.addActionListener(new java.awt.event.ActionListener() {
+            @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIniciarActionPerformed(evt);
             }
@@ -228,7 +230,38 @@ public class IniciarSesion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
-  
+        String usuario = txtUsuario.getText().trim();
+        String contrasena = new String(txtPassword.getPassword()).trim();
+
+        if (usuario.isEmpty() || usuario.equals(textUser)) {
+            JOptionPane.showMessageDialog(this, "Por favor, ingresa tu cédula.");
+            return;
+        }
+
+        if (contrasena.isEmpty() || contrasena.equals(textPass)) {
+            JOptionPane.showMessageDialog(this, "Por favor, ingresa tu contraseña.");
+            return;
+        }
+
+        UsuarioJpaController usuarioController = new UsuarioJpaController();
+        List<Usuario> usuarios = usuarioController.findUsuarioEntities();
+
+        boolean loginExitoso = false;
+        for (Usuario u : usuarios) {
+            if (u.getCedula().equals(usuario) && u.getContrasena().equals(contrasena)) {
+                loginExitoso = true;
+                break;
+            }
+        }
+
+        if (loginExitoso) {
+            JOptionPane.showMessageDialog(this, "Login exitoso. Bienvenido!");
+            // Abrir el panel principal
+            new PanelPrincipal().setVisible(true);
+            this.dispose(); // Cerrar la ventana de login
+        } else {
+            JOptionPane.showMessageDialog(this, "Cédula o contraseña incorrectos.");
+        }
     }//GEN-LAST:event_btnIniciarActionPerformed
 
     private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed

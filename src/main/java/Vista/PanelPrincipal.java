@@ -45,11 +45,15 @@ public class PanelPrincipal extends javax.swing.JFrame {
         menuRentas = new javax.swing.JPopupMenu();
         menuCrearRenta = new javax.swing.JMenuItem();
         menuGestionarRentas = new javax.swing.JMenuItem();
+        menuReservaciones = new javax.swing.JPopupMenu();
+        menuCrearReservacion = new javax.swing.JMenuItem();
+        menuGestionarReservaciones = new javax.swing.JMenuItem();
         jToolBar1 = new javax.swing.JToolBar();
         jButton1 = new javax.swing.JButton();
         btnUsuarios = new javax.swing.JButton();
         btnVehiculos = new javax.swing.JButton();
         btnRentas = new javax.swing.JButton();
+        btnReservaciones = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -170,6 +174,33 @@ public class PanelPrincipal extends javax.swing.JFrame {
         });
         menuRentas.add(menuGestionarRentas);
 
+        menuReservaciones.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
+        menuCrearReservacion.setBackground(new java.awt.Color(255, 255, 255));
+        menuCrearReservacion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        menuCrearReservacion.setText("Reservar un vehículo");
+        menuCrearReservacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        menuCrearReservacion.setOpaque(true);
+        menuCrearReservacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuCrearReservacionActionPerformed(evt);
+            }
+        });
+        menuReservaciones.add(menuCrearReservacion);
+
+        menuGestionarReservaciones.setBackground(new java.awt.Color(255, 255, 255));
+        menuGestionarReservaciones.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        menuGestionarReservaciones.setText("Gestionar reservaciones");
+        menuGestionarReservaciones.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 255)));
+        menuGestionarReservaciones.setOpaque(true);
+        menuGestionarReservaciones.setPreferredSize(new java.awt.Dimension(178, 22));
+        menuGestionarReservaciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuGestionarReservacionesActionPerformed(evt);
+            }
+        });
+        menuReservaciones.add(menuGestionarReservaciones);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -235,6 +266,21 @@ public class PanelPrincipal extends javax.swing.JFrame {
             }
         });
         jToolBar1.add(btnRentas);
+
+        btnReservaciones.setBackground(new java.awt.Color(30, 58, 128));
+        btnReservaciones.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        btnReservaciones.setForeground(new java.awt.Color(255, 255, 255));
+        btnReservaciones.setText("Reservaciones");
+        btnReservaciones.setFocusable(false);
+        btnReservaciones.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnReservaciones.setOpaque(true);
+        btnReservaciones.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnReservaciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReservacionesActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(btnReservaciones);
 
         getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1410, 70));
 
@@ -318,17 +364,36 @@ menuVehiculos.show(btnVehiculos, 0, btnVehiculos.getHeight());          // TODO 
     }//GEN-LAST:event_btnVehiculosActionPerformed
 
     private void menuGestionarRentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuGestionarRentasActionPerformed
-        // TODO add your handling code here:
+        GestionRentas gR = new GestionRentas();
+        gR.setLocationRelativeTo(null);
+        gR.setVisible(true);
     }//GEN-LAST:event_menuGestionarRentasActionPerformed
 
     private void menuCrearRentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCrearRentaActionPerformed
-        // TODO add your handling code here:
+        GestionRentas gR = new GestionRentas();
+        gR.setLocationRelativeTo(null);
+        gR.setVisible(true);
     }//GEN-LAST:event_menuCrearRentaActionPerformed
 
+    private void menuCrearReservacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCrearReservacionActionPerformed
+        GestionReservaciones gRes = new GestionReservaciones();
+        gRes.setLocationRelativeTo(null);
+        gRes.setVisible(true);
+    }//GEN-LAST:event_menuCrearReservacionActionPerformed
+
+    private void menuGestionarReservacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuGestionarReservacionesActionPerformed
+        GestionReservaciones gRes = new GestionReservaciones();
+        gRes.setLocationRelativeTo(null);
+        gRes.setVisible(true);
+    }//GEN-LAST:event_menuGestionarReservacionesActionPerformed
+
     private void btnRentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRentasActionPerformed
-menuRentas.show(btnRentas, 0, btnRentas.getHeight());          // TODO add your handling code here:
-        // TODO add your handling code here:
+        menuRentas.show(btnRentas, 0, btnRentas.getHeight());
     }//GEN-LAST:event_btnRentasActionPerformed
+
+    private void btnReservacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReservacionesActionPerformed
+        menuReservaciones.show(btnReservaciones, 0, btnReservaciones.getHeight());
+    }//GEN-LAST:event_btnReservacionesActionPerformed
 
     private void menuGestionarAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuGestionarAutoActionPerformed
         // TODO add your handling code here:
@@ -374,6 +439,7 @@ aC.setVisible(true);
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRentas;
+    private javax.swing.JButton btnReservaciones;
     private javax.swing.JButton btnUsuarios;
     private javax.swing.JButton btnVehiculos;
     private javax.swing.JButton jButton1;
@@ -384,14 +450,17 @@ aC.setVisible(true);
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JMenuItem menuCategorías;
     private javax.swing.JMenuItem menuCrearRenta;
+    private javax.swing.JMenuItem menuCrearReservacion;
     private javax.swing.JMenuItem menuDisponibilidad;
     private javax.swing.JMenuItem menuGestionarAuto;
     private javax.swing.JMenuItem menuGestionarRentas;
+    private javax.swing.JMenuItem menuGestionarReservaciones;
     private javax.swing.JMenuItem menuGestionarU;
     private javax.swing.JMenuItem menuGestionarYate;
     private javax.swing.JMenuItem menuHistorial;
     private javax.swing.JMenuItem menuMantenimiento;
     private javax.swing.JPopupMenu menuRentas;
+    private javax.swing.JPopupMenu menuReservaciones;
     private javax.swing.JPopupMenu menuUsuarios;
     private javax.swing.JPopupMenu menuVehiculos;
     // End of variables declaration//GEN-END:variables
