@@ -202,18 +202,29 @@ public class PanelPrincipal extends javax.swing.JFrame {
         menuReservaciones.add(menuGestionarReservaciones);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("RentCAR - Sistema de Gestión de Vehículos");
+        setMinimumSize(new java.awt.Dimension(1200, 650));
+        setPreferredSize(new java.awt.Dimension(1200, 650));
+        setExtendedState(javax.swing.JFrame.MAXIMIZED_HORIZ);
+        getContentPane().setBackground(new java.awt.Color(245, 247, 250));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jToolBar1.setBackground(new java.awt.Color(30, 58, 128));
+        jToolBar1.setBackground(new java.awt.Color(25, 50, 120));
+        jToolBar1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(76, 175, 80)));
+        jToolBar1.setFloatable(false);
+        jToolBar1.setRollover(true);
+        jToolBar1.setPreferredSize(new java.awt.Dimension(1200, 70));
         jToolBar1.setRollover(true);
 
-        jButton1.setBackground(new java.awt.Color(30, 58, 128));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(25, 50, 120));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 16));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Inicio");
+        jButton1.setText("INICIO");
+        jButton1.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 20, 10, 20));
         jButton1.setFocusable(false);
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton1.setOpaque(true);
+        jButton1.setPreferredSize(new java.awt.Dimension(120, 45));
         jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -222,13 +233,15 @@ public class PanelPrincipal extends javax.swing.JFrame {
         });
         jToolBar1.add(jButton1);
 
-        btnUsuarios.setBackground(new java.awt.Color(30, 58, 128));
-        btnUsuarios.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        btnUsuarios.setBackground(new java.awt.Color(25, 50, 120));
+        btnUsuarios.setFont(new java.awt.Font("Segoe UI", 1, 16));
         btnUsuarios.setForeground(new java.awt.Color(255, 255, 255));
-        btnUsuarios.setText("Clientes");
+        btnUsuarios.setText("CLIENTES");
+        btnUsuarios.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 20, 10, 20));
         btnUsuarios.setFocusable(false);
         btnUsuarios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnUsuarios.setOpaque(true);
+        btnUsuarios.setPreferredSize(new java.awt.Dimension(120, 45));
         btnUsuarios.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -237,13 +250,15 @@ public class PanelPrincipal extends javax.swing.JFrame {
         });
         jToolBar1.add(btnUsuarios);
 
-        btnVehiculos.setBackground(new java.awt.Color(30, 58, 128));
-        btnVehiculos.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        btnVehiculos.setBackground(new java.awt.Color(25, 50, 120));
+        btnVehiculos.setFont(new java.awt.Font("Segoe UI", 1, 16));
         btnVehiculos.setForeground(new java.awt.Color(255, 255, 255));
-        btnVehiculos.setText("Vehiculos");
+        btnVehiculos.setText("VEHICULOS");
+        btnVehiculos.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 20, 10, 20));
         btnVehiculos.setFocusable(false);
         btnVehiculos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnVehiculos.setOpaque(true);
+        btnVehiculos.setPreferredSize(new java.awt.Dimension(120, 45));
         btnVehiculos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnVehiculos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -252,13 +267,15 @@ public class PanelPrincipal extends javax.swing.JFrame {
         });
         jToolBar1.add(btnVehiculos);
 
-        btnRentas.setBackground(new java.awt.Color(30, 58, 128));
-        btnRentas.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        btnRentas.setBackground(new java.awt.Color(25, 50, 120));
+        btnRentas.setFont(new java.awt.Font("Segoe UI", 1, 16));
         btnRentas.setForeground(new java.awt.Color(255, 255, 255));
-        btnRentas.setText("Rentas");
+        btnRentas.setText("RENTAS");
+        btnRentas.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 20, 10, 20));
         btnRentas.setFocusable(false);
         btnRentas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnRentas.setOpaque(true);
+        btnRentas.setPreferredSize(new java.awt.Dimension(120, 45));
         btnRentas.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnRentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -267,13 +284,15 @@ public class PanelPrincipal extends javax.swing.JFrame {
         });
         jToolBar1.add(btnRentas);
 
-        btnReservaciones.setBackground(new java.awt.Color(30, 58, 128));
-        btnReservaciones.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        btnReservaciones.setBackground(new java.awt.Color(25, 50, 120));
+        btnReservaciones.setFont(new java.awt.Font("Segoe UI", 1, 16));
         btnReservaciones.setForeground(new java.awt.Color(255, 255, 255));
-        btnReservaciones.setText("Reservaciones");
+        btnReservaciones.setText("RESERVACIONES");
+        btnReservaciones.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 20, 10, 20));
         btnReservaciones.setFocusable(false);
         btnReservaciones.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnReservaciones.setOpaque(true);
+        btnReservaciones.setPreferredSize(new java.awt.Dimension(140, 45));
         btnReservaciones.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnReservaciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -282,19 +301,27 @@ public class PanelPrincipal extends javax.swing.JFrame {
         });
         jToolBar1.add(btnReservaciones);
 
-        getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1410, 70));
+        getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 70));
 
-        jLabel2.setBackground(new java.awt.Color(30, 41, 59));
-        jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 1, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(30, 41, 59));
-        jLabel2.setText("Tu sistema de getión de renta de autos seguro y fácil de usar ");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 270, 1010, 70));
+        jLabel2.setBackground(new java.awt.Color(25, 50, 120));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18));
+        jLabel2.setForeground(new java.awt.Color(60, 60, 60));
+        jLabel2.setText("Tu sistema de gestión de renta de autos seguro y fácil de usar");
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, 1000, 40));
 
-        jLabel3.setBackground(new java.awt.Color(30, 41, 59));
-        jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 1, 60)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(30, 41, 59));
+        jLabel3.setBackground(new java.awt.Color(25, 50, 120));
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 54));
+        jLabel3.setForeground(new java.awt.Color(25, 50, 120));
         jLabel3.setText("RentCAR");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 200, 260, 70));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 1000, 80));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14));
+        jLabel1.setForeground(new java.awt.Color(120, 120, 120));
+        jLabel1.setText("© 2025 RentCAR - Todos los derechos reservados");
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 500, 1000, 30));
 
         jLabel1.setBackground(new java.awt.Color(226, 232, 240));
         jLabel1.setOpaque(true);

@@ -123,8 +123,10 @@ public class GestionRentas extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setText("Gestión de Rentas");
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(30, 58, 128));
+        jLabel1.setText("📋 Gestión de Rentas");
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         tbRentas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -142,26 +144,78 @@ public class GestionRentas extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tbRentas.setBackground(new java.awt.Color(248, 249, 250));
+        tbRentas.setFont(new java.awt.Font("Segoe UI", 0, 12));
+        tbRentas.setGridColor(new java.awt.Color(220, 220, 220));
+        tbRentas.setRowHeight(25);
+        tbRentas.setSelectionBackground(new java.awt.Color(76, 175, 80));
+        tbRentas.setSelectionForeground(java.awt.Color.WHITE);
+        tbRentas.getTableHeader().setBackground(new java.awt.Color(30, 58, 128));
+        tbRentas.getTableHeader().setForeground(java.awt.Color.WHITE);
+        tbRentas.getTableHeader().setFont(new java.awt.Font("Segoe UI", 1, 12));
         jScrollPane1.setViewportView(tbRentas);
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jLabel2.setForeground(new java.awt.Color(60, 60, 60));
         jLabel2.setText("Cliente:");
 
-        jLabel3.setText("Vehículo:");
+        cbCliente.setFont(new java.awt.Font("Segoe UI", 0, 12));
+        cbCliente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(200, 200, 200)));
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jLabel3.setForeground(new java.awt.Color(60, 60, 60));
+        jLabel3.setText("Vehiculo:");
+
+        cbVehiculo.setFont(new java.awt.Font("Segoe UI", 0, 12));
+        cbVehiculo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(200, 200, 200)));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jLabel4.setForeground(new java.awt.Color(60, 60, 60));
         jLabel4.setText("Fecha Inicio (YYYY-MM-DD):");
 
+        txtFechaInicio.setFont(new java.awt.Font("Segoe UI", 0, 12));
+        txtFechaInicio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(200, 200, 200)));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jLabel5.setForeground(new java.awt.Color(60, 60, 60));
         jLabel5.setText("Fecha Fin (YYYY-MM-DD):");
 
+        txtFechaFin.setFont(new java.awt.Font("Segoe UI", 0, 12));
+        txtFechaFin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(200, 200, 200)));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jLabel6.setForeground(new java.awt.Color(60, 60, 60));
         jLabel6.setText("Tarifa Diaria:");
 
-        btnCrear.setText("Crear Renta");
+        txtTarifa.setFont(new java.awt.Font("Segoe UI", 0, 12));
+        txtTarifa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(200, 200, 200)));
+
+        btnCrear.setBackground(new java.awt.Color(76, 175, 80));
+        btnCrear.setFont(new java.awt.Font("Segoe UI", 1, 14));
+        btnCrear.setForeground(java.awt.Color.WHITE);
+        btnCrear.setText("CREAR RENTA");
+        btnCrear.setBorder(javax.swing.BorderFactory.createEmptyBorder(8, 15, 8, 15));
+        btnCrear.setBorderPainted(false);
+        btnCrear.setFocusPainted(false);
+        btnCrear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCrear.setOpaque(true);
+        btnCrear.setPreferredSize(new java.awt.Dimension(140, 40));
         btnCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCrearActionPerformed(evt);
             }
         });
 
-        btnRefrescar.setText("Refrescar");
+        btnRefrescar.setBackground(new java.awt.Color(33, 150, 243));
+        btnRefrescar.setFont(new java.awt.Font("Segoe UI", 1, 14));
+        btnRefrescar.setForeground(java.awt.Color.WHITE);
+        btnRefrescar.setText("REFRESCAR");
+        btnRefrescar.setBorder(javax.swing.BorderFactory.createEmptyBorder(8, 15, 8, 15));
+        btnRefrescar.setBorderPainted(false);
+        btnRefrescar.setFocusPainted(false);
+        btnRefrescar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRefrescar.setOpaque(true);
+        btnRefrescar.setPreferredSize(new java.awt.Dimension(140, 40));
         btnRefrescar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRefrescarActionPerformed(evt);

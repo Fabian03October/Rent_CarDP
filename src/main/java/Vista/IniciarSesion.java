@@ -118,11 +118,13 @@ public class IniciarSesion extends javax.swing.JFrame {
         fondoOscuro.setOpaque(true);
         panelInicio.add(fondoOscuro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 520));
 
-        btnIniciar.setBackground(new java.awt.Color(37, 99, 235));
-        btnIniciar.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btnIniciar.setBackground(new java.awt.Color(76, 175, 80));
+        btnIniciar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnIniciar.setForeground(new java.awt.Color(255, 255, 255));
-        btnIniciar.setText("INGRESAR");
-        btnIniciar.setBorder(null);
+        btnIniciar.setText("🔑 INGRESAR");
+        btnIniciar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(76, 175, 80), 2));
+        btnIniciar.setBorderPainted(true);
+        btnIniciar.setFocusPainted(false);
         btnIniciar.setOpaque(true);
         btnIniciar.addActionListener(new java.awt.event.ActionListener() {
             @Override
