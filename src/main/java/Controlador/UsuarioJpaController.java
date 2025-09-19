@@ -142,4 +142,68 @@ public class UsuarioJpaController implements Serializable {
         }
     }
     
+    /**
+     * Autentica un usuario con cédula y contraseña
+     */
+    public Usuario autenticarUsuario(String cedula, String contrasena) {
+        EntityManager em = getEntityManager();
+        try {
+            Query query = em.createQuery("SELECT u FROM Usuario u WHERE u.cedula = :cedula AND u.contrasena = :contrasena AND u.activo = true");
+            query.setParameter("cedula", cedula);
+            query.setParameter("contrasena", contrasena);
+            List<Usuario> usuarios = query.getResultList();
+            if (!usuarios.isEmpty()) {
+                return usuarios.get(0);
+            }
+            return null;
+        } finally {
+            em.close();
+        }
+    }
+    
+    /**
+     * Busca usuario por cédula
+     */
+    public Usuario findUsuarioByCedula(String cedula) {
+        EntityManager em = getEntityManager();
+        try {
+            Query query = em.createQuery("SELECT u FROM Usuario u WHERE u.cedula = :cedula");
+            query.setParameter("cedula", cedula);
+            List<Usuario> usuarios = query.getResultList();
+            if (!usuarios.isEmpty()) {
+                return usuarios.get(0);
+            }
+            return null;
+        } finally {
+            em.close();
+        }
+    }
+    
+    /**
+     * Obtiene usuarios por rol
+     */
+    public List<Usuario> getUsuariosPorRol(String rol) {
+        EntityManager em = getEntityManager();
+        try {
+            Query query = em.createQuery("SELECT u FROM Usuario u WHERE u.rol = :rol AND u.activo = true");
+            query.setParameter("rol", rol);
+            return query.getResultList();
+        } finally {
+            em.close();
+        }
+    }
+    
+    /**
+     * Obtiene usuarios activos
+     */
+    public List<Usuario> getUsuariosActivos() {
+        EntityManager em = getEntityManager();
+        try {
+            Query query = em.createQuery("SELECT u FROM Usuario u WHERE u.activo = true ORDER BY u.nombre, u.apellido");
+            return query.getResultList();
+        } finally {
+            em.close();
+        }
+    }
+    
 }

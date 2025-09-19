@@ -6,6 +6,7 @@ package Vista;
 
 import Controlador.UsuarioJpaController;
 import Modelo.Usuario;
+import Modelo.SesionUsuario;
 import java.util.List;
 import javax.swing.JOptionPane;
 import java.awt.Color;
@@ -232,10 +233,10 @@ public class IniciarSesion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
-        String usuario = txtUsuario.getText().trim();
+        String cedula = txtUsuario.getText().trim();
         String contrasena = new String(txtPassword.getPassword()).trim();
 
-        if (usuario.isEmpty() || usuario.equals(textUser)) {
+        if (cedula.isEmpty() || cedula.equals(textUser)) {
             JOptionPane.showMessageDialog(this, "Por favor, ingresa tu cédula.");
             return;
         }
@@ -246,23 +247,27 @@ public class IniciarSesion extends javax.swing.JFrame {
         }
 
         UsuarioJpaController usuarioController = new UsuarioJpaController();
-        List<Usuario> usuarios = usuarioController.findUsuarioEntities();
+        Usuario usuario = usuarioController.autenticarUsuario(cedula, contrasena);
 
-        boolean loginExitoso = false;
-        for (Usuario u : usuarios) {
-            if (u.getCedula().equals(usuario) && u.getContrasena().equals(contrasena)) {
-                loginExitoso = true;
-                break;
+        if (usuario != null) {
+            // Iniciar sesión del usuario
+            SesionUsuario.getInstance().iniciarSesion(usuario);
+            
+            JOptionPane.showMessageDialog(this, "Bienvenido " + usuario.getNombre() + " " + usuario.getApellido());
+            
+            // Redirigir según el rol
+            if ("ADMIN".equals(usuario.getRol())) {
+                new PanelAdministrador().setVisible(true);
+            } else if ("EMPLEADO".equals(usuario.getRol())) {
+                new PanelEmpleado().setVisible(true);
+            } else {
+                // Rol por defecto como empleado
+                new PanelEmpleado().setVisible(true);
             }
-        }
-
-        if (loginExitoso) {
-            JOptionPane.showMessageDialog(this, "Login exitoso. Bienvenido!");
-            // Abrir el panel principal
-            new PanelPrincipal().setVisible(true);
+            
             this.dispose(); // Cerrar la ventana de login
         } else {
-            JOptionPane.showMessageDialog(this, "Cédula o contraseña incorrectos.");
+            JOptionPane.showMessageDialog(this, "Cédula o contraseña incorrectos, o usuario inactivo.");
         }
     }//GEN-LAST:event_btnIniciarActionPerformed
 

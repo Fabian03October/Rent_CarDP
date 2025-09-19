@@ -40,6 +40,19 @@ public class Usuario implements Serializable {
     @Basic(optional = false)
     @Column(name = "contrasena")
     private String contrasena;
+    @Basic(optional = false)
+    @Column(name = "rol")
+    private String rol; // ADMIN, EMPLEADO
+    @Column(name = "nombre")
+    private String nombre;
+    @Column(name = "apellido")
+    private String apellido;
+    @Column(name = "telefono")
+    private String telefono;
+    @Column(name = "email")
+    private String email;
+    @Column(name = "activo")
+    private Boolean activo;
 
     public Usuario() {
     }
@@ -52,6 +65,16 @@ public class Usuario implements Serializable {
         this.idUsuario = idUsuario;
         this.cedula = cedula;
         this.contrasena = contrasena;
+        this.activo = true;
+    }
+
+    public Usuario(String cedula, String contrasena, String rol, String nombre, String apellido) {
+        this.cedula = cedula;
+        this.contrasena = contrasena;
+        this.rol = rol;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.activo = true;
     }
 
     public Integer getIdUsuario() {
@@ -76,6 +99,54 @@ public class Usuario implements Serializable {
 
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Boolean getActivo() {
+        return activo;
+    }
+
+    public void setActivo(Boolean activo) {
+        this.activo = activo;
     }
 
     @Override

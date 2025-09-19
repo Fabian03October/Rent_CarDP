@@ -57,6 +57,8 @@ public class Renta implements Serializable {
     @Basic(optional = false)
     @Column(name = "tarifaDiaria")
     private BigDecimal tarifaDiaria;
+    @Column(name = "precio_total")
+    private BigDecimal precioTotal;
     @Column(name = "Estado")
     private String estado;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idRenta")
@@ -69,6 +71,9 @@ public class Renta implements Serializable {
     @JoinColumn(name = "idVehiculo", referencedColumnName = "idVehiculo")
     @ManyToOne(optional = false)
     private Vehiculo idVehiculo;
+    @JoinColumn(name = "idReservacion", referencedColumnName = "idReservacion")
+    @ManyToOne
+    private Reservacion idReservacion;
 
     public Renta() {
     }
@@ -154,6 +159,22 @@ public class Renta implements Serializable {
 
     public void setIdVehiculo(Vehiculo idVehiculo) {
         this.idVehiculo = idVehiculo;
+    }
+
+    public BigDecimal getPrecioTotal() {
+        return precioTotal;
+    }
+
+    public void setPrecioTotal(BigDecimal precioTotal) {
+        this.precioTotal = precioTotal;
+    }
+
+    public Reservacion getIdReservacion() {
+        return idReservacion;
+    }
+
+    public void setIdReservacion(Reservacion idReservacion) {
+        this.idReservacion = idReservacion;
     }
 
     @Override

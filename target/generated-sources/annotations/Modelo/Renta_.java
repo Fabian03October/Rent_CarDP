@@ -3,6 +3,7 @@ package Modelo;
 import Modelo.Cliente;
 import Modelo.Factura;
 import Modelo.Observacion;
+import Modelo.Reservacion;
 import Modelo.Vehiculo;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -11,7 +12,7 @@ import javax.persistence.metamodel.ListAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor", date="2025-09-17T22:28:19", comments="EclipseLink-2.7.12.v20230209-rNA")
+@Generated(value="org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor", date="2025-09-18T21:31:24", comments="EclipseLink-2.7.12.v20230209-rNA")
 @StaticMetamodel(Renta.class)
 public class Renta_ { 
 
@@ -23,6 +24,8 @@ public class Renta_ {
     public static volatile SingularAttribute<Renta, Date> fechaInicio;
     public static volatile ListAttribute<Renta, Factura> facturaList;
     public static volatile SingularAttribute<Renta, Integer> idRenta;
+    public static volatile SingularAttribute<Renta, Reservacion> idReservacion;
+    public static volatile SingularAttribute<Renta, BigDecimal> precioTotal;
     public static volatile SingularAttribute<Renta, Date> fechaFin;
 
 }

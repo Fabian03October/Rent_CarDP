@@ -1,5 +1,5 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFi    @NamedQuery(name = "Vehiculo.findByDisponible", query = "SELECT v FROM Vehiculo v WHERE v.disponible = :disponible")})"eSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Modelo;
@@ -54,8 +54,8 @@ public class Vehiculo implements Serializable {
     private BigDecimal precio;
     @Column(name = "a\u00f1o")
     private Integer año;
-    @Column(name = "reservado")
-    private Boolean reservado;
+    @Column(name = "disponible")
+    private Boolean disponible;
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "vehiculo")
     private Acuatico acuatico;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idVehiculo")
@@ -119,12 +119,12 @@ public class Vehiculo implements Serializable {
         this.año = año;
     }
 
-    public Boolean getReservado() {
-        return reservado;
+    public Boolean getDisponible() {
+        return disponible;
     }
 
-    public void setReservado(Boolean reservado) {
-        this.reservado = reservado;
+    public void setDisponible(Boolean disponible) {
+        this.disponible = disponible;
     }
 
     public Acuatico getAcuatico() {
